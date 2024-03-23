@@ -1,4 +1,4 @@
-type Sucursal = {
+export type Sucursal = {
   id: number
   provincia: string
   localidad: string

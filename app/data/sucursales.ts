@@ -43,5 +43,23 @@ export const sucursales: Sucursal[] = [
     numero: '1953',
     lat_x: -34.563834,
     long_y: -58.456577
+  },
+  {
+    id: 100005,
+    provincia: 'Córdoba',
+    localidad: 'Punilla',
+    calle: 'General Las Heras',
+    numero: '223',
+    lat_x: -31.375989,
+    long_y: -64.53354
+  },
+  {
+    id: 100006,
+    provincia: 'Córdoba',
+    localidad: 'Ciudad de Córdoba',
+    calle: 'Nazaret',
+    numero: '112',
+    lat_x: -31.388776,
+    long_y: -64.233097
   }
 ]

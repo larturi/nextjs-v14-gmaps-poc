@@ -2,20 +2,23 @@
 
 import React, { useEffect } from 'react'
 import { Loader } from '@googlemaps/js-api-loader'
-import useStore from '@/app/context/store'
 
-export default function GoogleMaps() {
+interface Props {
+  sucursales: Sucursal[]
+}
+
+const GoogleMaps: React.FC<Props> = ({ sucursales }) => {
   const mapRef = React.useRef<HTMLDivElement>(null)
-  const sucursales = useStore((state) => state.sucursales)
+  // const sucursales = useStore((state) => state.sucursales)
+
+  const loader = new Loader({
+    apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY as string,
+    version: 'quartely',
+    id: '__googleMapsScriptId'
+  })
 
   useEffect(() => {
     const initializeMap = async () => {
-      const loader = new Loader({
-        apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY as string,
-        version: 'quartely',
-        id: '__googleMapsScriptId'
-      })
-
       const { Map } = await loader.importLibrary('maps')
       const { AdvancedMarkerElement } = (await google.maps.importLibrary(
         'marker'
@@ -56,3 +59,5 @@ export default function GoogleMaps() {
 
   return <div className='h-screen' ref={mapRef} />
 }
+
+export default GoogleMaps
