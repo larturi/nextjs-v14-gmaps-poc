@@ -6,27 +6,26 @@ import useStore from '@/app/context/store'
 
 export default function GoogleMaps() {
   const mapRef = React.useRef<HTMLDivElement>(null)
-
   const sucursales = useStore((state) => state.sucursales)
 
   useEffect(() => {
     const initializeMap = async () => {
       const loader = new Loader({
         apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY as string,
-        version: 'quartely'
+        version: 'quartely',
+        id: '__googleMapsScriptId'
       })
 
       const { Map } = await loader.importLibrary('maps')
+      const { AdvancedMarkerElement } = (await google.maps.importLibrary(
+        'marker'
+      )) as google.maps.MarkerLibrary
 
       // Centra el mapa en CABA
       const locationInMap = {
         lat: -34.610159,
         lng: -58.451987
       }
-
-      const { Marker } = (await loader.importLibrary(
-        'marker'
-      )) as google.maps.MarkerLibrary
 
       const options: google.maps.MapOptions = {
         center: locationInMap,
@@ -42,9 +41,12 @@ export default function GoogleMaps() {
           lng: sucursal.long_y
         }
 
-        const marker = new Marker({
+        const titleMarker = `${sucursal.calle} ${sucursal.numero}`
+
+        const marker = new google.maps.marker.AdvancedMarkerElement({
           map: map,
-          position: locationInMap
+          position: locationInMap,
+          title: titleMarker
         })
       })
     }
