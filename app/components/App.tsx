@@ -27,10 +27,10 @@ const App: React.FC<Props> = ({ provincias, localidades, sucursales }) => {
     <div>
       <div>
         <SelectProvincias provincias={provincias} />
-        <SelectLocalidades localidades={localidades} />
+        <SelectLocalidades />
       </div>
       <div>
-        <GoogleMaps sucursales={sucursales} />
+        <GoogleMaps />
       </div>
     </div>
   )

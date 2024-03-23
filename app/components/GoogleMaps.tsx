@@ -2,14 +2,11 @@
 
 import React, { useEffect } from 'react'
 import { Loader } from '@googlemaps/js-api-loader'
+import useStore from '@/app/context/store'
 
-interface Props {
-  sucursales: Sucursal[]
-}
-
-const GoogleMaps: React.FC<Props> = ({ sucursales }) => {
+const GoogleMaps = () => {
   const mapRef = React.useRef<HTMLDivElement>(null)
-  // const sucursales = useStore((state) => state.sucursales)
+  const { sucursales } = useStore()
 
   const loader = new Loader({
     apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY as string,
@@ -19,6 +16,7 @@ const GoogleMaps: React.FC<Props> = ({ sucursales }) => {
 
   useEffect(() => {
     const initializeMap = async () => {
+      console.log(11)
       const { Map } = await loader.importLibrary('maps')
       const { AdvancedMarkerElement } = (await google.maps.importLibrary(
         'marker'
