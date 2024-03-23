@@ -8,6 +8,8 @@ Instalar dependencias:
 - @types/google.maps
 
 ```bash
+nvm use 20
+
 pnpm install
 ```
 
@@ -21,6 +23,8 @@ Crear el archivo .env.local en base a .env.template con la API KEY de Google Map
 ## Run the development server
 
 ```bash
+nvm use 20
+
 pnpm dev
 ```
 
@@ -29,5 +33,3 @@ LINKS:
 <https://www.youtube.com/watch?v=2xI2RKC4niY>
 
 <https://developers.google.com/maps>
-
-

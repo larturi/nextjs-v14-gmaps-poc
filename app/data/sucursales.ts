@@ -1,5 +1,6 @@
-export const sucursales = [
+export const sucursales: Sucursal[] = [
   {
+    id: 100000,
     provincia: 'Buenos Aires',
     localidad: 'Martinez',
     calle: 'Avenida Santa Fe',
@@ -8,6 +9,7 @@ export const sucursales = [
     long_y: -58.5009628
   },
   {
+    id: 100001,
     provincia: 'Buenos Aires',
     localidad: 'Monte Grande',
     calle: 'Avenida Sofia Terrero de Santamarina',
@@ -16,6 +18,7 @@ export const sucursales = [
     long_y: -58.4650541
   },
   {
+    id: 100002,
     provincia: 'CABA',
     localidad: 'Balvanera',
     calle: 'Azcuenaga',
@@ -24,6 +27,7 @@ export const sucursales = [
     long_y: -58.4007821
   },
   {
+    id: 100003,
     provincia: 'CABA',
     localidad: 'San Nicolás',
     calle: 'Tucuman',
@@ -32,6 +36,7 @@ export const sucursales = [
     long_y: -58.3910338
   },
   {
+    id: 100004,
     provincia: 'CABA',
     localidad: 'Belgrano',
     calle: 'Ciudad de la Paz',

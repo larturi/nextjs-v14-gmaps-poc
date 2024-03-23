@@ -2,10 +2,12 @@
 
 import React, { useEffect } from 'react'
 import { Loader } from '@googlemaps/js-api-loader'
-import { sucursales } from '@/app/data/sucursales'
+import useStore from '@/app/context/store'
 
 export default function GoogleMaps() {
   const mapRef = React.useRef<HTMLDivElement>(null)
+
+  const sucursales = useStore((state) => state.sucursales)
 
   useEffect(() => {
     const initializeMap = async () => {
@@ -48,7 +50,7 @@ export default function GoogleMaps() {
     }
 
     initializeMap()
-  }, [])
+  }, [sucursales])
 
   return <div className='h-screen' ref={mapRef} />
 }
