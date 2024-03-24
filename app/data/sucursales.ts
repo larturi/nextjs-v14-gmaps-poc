@@ -9,7 +9,11 @@ export const sucursales: Sucursal[] = [
     numero: '1991',
     lat_x: -34.4895199,
     long_y: -58.5009628,
-    stock: 12
+    stock: 12,
+    centroLocalidadGeo: {
+      lat_x: -34.4895199,
+      long_y: -58.5009628
+    }
   },
   {
     id: 100001,
@@ -19,7 +23,11 @@ export const sucursales: Sucursal[] = [
     numero: '534',
     lat_x: -34.8192654,
     long_y: -58.4650541,
-    stock: 1
+    stock: 1,
+    centroLocalidadGeo: {
+      lat_x: -34.4895199,
+      long_y: -58.5009628
+    }
   },
   {
     id: 100002,
@@ -29,7 +37,11 @@ export const sucursales: Sucursal[] = [
     numero: '190',
     lat_x: -34.6075381,
     long_y: -58.4007821,
-    stock: 2
+    stock: 2,
+    centroLocalidadGeo: {
+      lat_x: -34.60063358351868,
+      long_y: -58.448071647617475
+    }
   },
   {
     id: 100003,
@@ -39,7 +51,11 @@ export const sucursales: Sucursal[] = [
     numero: '1685',
     lat_x: -34.601733,
     long_y: -58.3910338,
-    stock: 6
+    stock: 6,
+    centroLocalidadGeo: {
+      lat_x: -34.60063358351868,
+      long_y: -58.448071647617475
+    }
   },
   {
     id: 100004,
@@ -49,7 +65,11 @@ export const sucursales: Sucursal[] = [
     numero: '1953',
     lat_x: -34.563834,
     long_y: -58.456577,
-    stock: 7
+    stock: 7,
+    centroLocalidadGeo: {
+      lat_x: -34.60063358351868,
+      long_y: -58.448071647617475
+    }
   },
   {
     id: 100005,
@@ -59,7 +79,11 @@ export const sucursales: Sucursal[] = [
     numero: '223',
     lat_x: -31.375989,
     long_y: -64.53354,
-    stock: 14
+    stock: 14,
+    centroLocalidadGeo: {
+      lat_x: -31.01604536690233,
+      long_y: -64.08071100550272
+    }
   },
   {
     id: 100006,
@@ -69,7 +93,11 @@ export const sucursales: Sucursal[] = [
     numero: '112',
     lat_x: -31.388776,
     long_y: -64.233097,
-    stock: 1
+    stock: 1,
+    centroLocalidadGeo: {
+      lat_x: -31.01604536690233,
+      long_y: -64.08071100550272
+    }
   },
   {
     id: 100007,
@@ -79,7 +107,11 @@ export const sucursales: Sucursal[] = [
     numero: '2933',
     lat_x: -36.883909,
     long_y: -60.331735,
-    stock: 0
+    stock: 0,
+    centroLocalidadGeo: {
+      lat_x: -34.4895199,
+      long_y: -58.5009628
+    }
   },
   {
     id: 100008,
@@ -89,7 +121,11 @@ export const sucursales: Sucursal[] = [
     numero: '5257',
     lat_x: -32.962352,
     long_y: -60.694632,
-    stock: 12
+    stock: 12,
+    centroLocalidadGeo: {
+      lat_x: -32.962352,
+      long_y: -60.694632
+    }
   },
   {
     id: 100009,
@@ -99,6 +135,10 @@ export const sucursales: Sucursal[] = [
     numero: '187',
     lat_x: -34.823379,
     long_y: -58.459635,
-    stock: 11
+    stock: 11,
+    centroLocalidadGeo: {
+      lat_x: -34.4895199,
+      long_y: -58.5009628
+    }
   }
 ]

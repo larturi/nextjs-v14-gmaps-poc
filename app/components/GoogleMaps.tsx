@@ -6,7 +6,7 @@ import useStore from '@/app/context/store'
 
 const GoogleMaps = () => {
   const mapRef = React.useRef<HTMLDivElement>(null)
-  const { sucursales } = useStore()
+  const { sucursalesLocalidad } = useStore()
 
   const loader = new Loader({
     apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY as string,
@@ -21,10 +21,21 @@ const GoogleMaps = () => {
         'marker'
       )) as google.maps.MarkerLibrary
 
-      // Centra el mapa en CABA
+      // Default: CABA
+      let centerOfMap = {
+        lat_x: -34.610159,
+        long_y: -58.451987
+      }
+
+      // Pone en el centro en base a lo definido en la BD como centro de la localidad
+      if (sucursalesLocalidad.length > 0) {
+        centerOfMap.lat_x = sucursalesLocalidad[0].centroLocalidadGeo.lat_x
+        centerOfMap.long_y = sucursalesLocalidad[0].centroLocalidadGeo.long_y
+      }
+
       const locationInMap = {
-        lat: -34.610159,
-        lng: -58.451987
+        lat: centerOfMap.lat_x,
+        lng: centerOfMap.long_y
       }
 
       const options: google.maps.MapOptions = {
@@ -35,7 +46,7 @@ const GoogleMaps = () => {
 
       const map = new Map(mapRef.current as HTMLDivElement, options)
 
-      sucursales.map((sucursal) => {
+      sucursalesLocalidad.map((sucursal) => {
         const locationInMap = {
           lat: sucursal.lat_x,
           lng: sucursal.long_y
@@ -52,7 +63,7 @@ const GoogleMaps = () => {
     }
 
     initializeMap()
-  }, [sucursales])
+  }, [sucursalesLocalidad])
 
   return <div className='h-screen' ref={mapRef} />
 }

@@ -7,4 +7,8 @@ export type Sucursal = {
   lat_x: number
   long_y: number
   stock: number
+  centroLocalidadGeo: {
+    lat_x: number
+    long_y: number
+  }
 }
