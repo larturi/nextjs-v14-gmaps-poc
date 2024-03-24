@@ -16,7 +16,6 @@ const GoogleMaps = () => {
 
   useEffect(() => {
     const initializeMap = async () => {
-      console.log(11)
       const { Map } = await loader.importLibrary('maps')
       const { AdvancedMarkerElement } = (await google.maps.importLibrary(
         'marker'

@@ -1,3 +1,5 @@
+import { Sucursal } from '../types/Sucursal'
+
 export const sucursales: Sucursal[] = [
   {
     id: 100000,
@@ -19,7 +21,7 @@ export const sucursales: Sucursal[] = [
   },
   {
     id: 100002,
-    provincia: 'CABA',
+    provincia: 'Ciudad de Buenos Aires',
     localidad: 'Balvanera',
     calle: 'Azcuenaga',
     numero: '190',
@@ -28,7 +30,7 @@ export const sucursales: Sucursal[] = [
   },
   {
     id: 100003,
-    provincia: 'CABA',
+    provincia: 'Ciudad de Buenos Aires',
     localidad: 'San Nicolás',
     calle: 'Tucuman',
     numero: '1685',
@@ -37,7 +39,7 @@ export const sucursales: Sucursal[] = [
   },
   {
     id: 100004,
-    provincia: 'CABA',
+    provincia: 'Ciudad de Buenos Aires',
     localidad: 'Belgrano',
     calle: 'Ciudad de la Paz',
     numero: '1953',
@@ -61,5 +63,32 @@ export const sucursales: Sucursal[] = [
     numero: '112',
     lat_x: -31.388776,
     long_y: -64.233097
+  },
+  {
+    id: 100007,
+    provincia: 'Buenos Aires',
+    localidad: 'Olavarría',
+    calle: 'Piedras',
+    numero: '2933',
+    lat_x: -36.883909,
+    long_y: -60.331735
+  },
+  {
+    id: 100008,
+    provincia: 'Santa Fe',
+    localidad: 'Rosario',
+    calle: 'Rueda',
+    numero: '5257',
+    lat_x: -32.962352,
+    long_y: -60.694632
+  },
+  {
+    id: 100009,
+    provincia: 'Buenos Aires',
+    localidad: 'Monte Grande',
+    calle: 'Reconquista',
+    numero: '187',
+    lat_x: -34.823379,
+    long_y: -58.459635
   }
 ]

@@ -4,39 +4,53 @@ import { Sucursal } from '../types/Sucursal'
 interface Store {
   // Sucursales
   sucursales: Sucursal[]
-  selectedSucursal?: Sucursal
   setSucursales: (sucursales: Sucursal[]) => void
 
   // Provincias
   provincias: string[]
-  selectedProvincia?: string
   setProvincias: (provincias: string[]) => void
-  setProvincia: (provincia: string) => void
 
   // Localidades
   localidades: string[]
-  selectedLocalidad?: string
   setLocalidades: (localidades: string[]) => void
-  setLocalidad: (localidad: string) => void
+
+  // Provincia Seleccionada
+  provinciaSeleccionada: string
+  setProvinciaSeleccionada: (provincia: string) => void
+
+  // Localidad Seleccionada
+  localidadSeleccionada: string
+  setLocalidadSeleccionada: (localidad: string) => void
+  localidadesUpdateCounter: number
 }
 
 const useStore = create<Store>((set) => ({
   // Sucursales
   sucursales: [],
-  selectedSucursal: undefined,
   setSucursales: (sucursales) => set({ sucursales }),
 
   // Provincias
   provincias: [],
-  selectedProvincia: undefined,
   setProvincias: (provincias) => set({ provincias }),
-  setProvincia: (selectedProvincia) => set({ selectedProvincia }),
 
   // Localidades
   localidades: [],
-  selectedLocalidad: undefined,
-  setLocalidades: (localidades) => set({ localidades }),
-  setLocalidad: (selectedLocalidad) => set({ selectedLocalidad })
+  setLocalidades: (localidades) =>
+    set((state) => ({
+      localidades,
+      localidadesUpdateCounter: state.localidadesUpdateCounter + 1
+    })),
+
+  // Provincia seleccionada
+  provinciaSeleccionada: '',
+  setProvinciaSeleccionada: (provincia) =>
+    set({ provinciaSeleccionada: provincia }),
+
+  // Localidad seleccionada
+  localidadSeleccionada: '',
+  setLocalidadSeleccionada: (localidad) =>
+    set({ localidadSeleccionada: localidad }),
+  localidadesUpdateCounter: 0
 }))
 
 export default useStore

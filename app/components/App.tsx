@@ -11,25 +11,23 @@ import { Sucursal } from '@/app/types/Sucursal'
 
 interface Props {
   provincias: string[]
-  localidades: string[]
   sucursales: Sucursal[]
 }
 
-const App: React.FC<Props> = ({ provincias, localidades, sucursales }) => {
-  const { setSucursales, setProvincias, setLocalidades } = useStore()
+const App: React.FC<Props> = ({ provincias, sucursales }) => {
+  const { setSucursales, setProvincias } = useStore()
 
   useEffect(() => {
     setSucursales(sucursales)
     setProvincias(provincias)
-    setLocalidades(localidades)
-  }, [sucursales, provincias, localidades])
+  }, [sucursales, provincias])
   return (
-    <div>
-      <div>
+    <div className='flex flex-row'>
+      <div className='w-3/12 bg-gray-100 p-4'>
         <SelectProvincias provincias={provincias} />
         <SelectLocalidades />
       </div>
-      <div>
+      <div className='w-9/12'>
         <GoogleMaps />
       </div>
     </div>
