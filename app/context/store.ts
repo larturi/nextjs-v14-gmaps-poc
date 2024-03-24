@@ -14,18 +14,22 @@ interface Store {
   localidades: string[]
   setLocalidades: (localidades: string[]) => void
 
-  // Provincia Seleccionada
+  // Provincia seleccionada
   provinciaSeleccionada: string
   setProvinciaSeleccionada: (provincia: string) => void
 
-  // Localidad Seleccionada
+  // Localidad seleccionada
   localidadSeleccionada: string
   setLocalidadSeleccionada: (localidad: string) => void
   localidadesUpdateCounter: number
 
-  // Sucursales de la Localidad Seleccionada
+  // Sucursales de la Localidad seleccionada
   sucursalesLocalidad: Sucursal[]
   setSucursalesLocalidad: (sucursalesLocalidad: Sucursal[]) => void
+
+  // Sucursal seleccionada
+  sucursalSeleccionada?: Sucursal
+  setSucursalSeleccionada: (id: string) => void
 }
 
 const useStore = create<Store>((set) => ({
@@ -56,7 +60,7 @@ const useStore = create<Store>((set) => ({
     set({ localidadSeleccionada: localidad }),
   localidadesUpdateCounter: 0,
 
-  // Sucursales de la Localidad Seleccionada
+  // Sucursales de la Localidad seleccionada
   sucursalesLocalidad: [],
   setSucursalesLocalidad: (localidad) =>
     set((state) => ({
@@ -65,7 +69,16 @@ const useStore = create<Store>((set) => ({
           sucursal.localidad.toLowerCase() ===
           localidad.toString().toLowerCase()
       )
-    }))
+    })),
+
+  sucursalSeleccionada: undefined,
+  setSucursalSeleccionada: (id) =>
+    set((state) => {
+      const foundSucursal = state.sucursales.find(
+        (sucursal) => sucursal.id.toString() === id
+      )
+      return { sucursalSeleccionada: foundSucursal || undefined }
+    })
 }))
 
 export default useStore

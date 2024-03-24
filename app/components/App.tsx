@@ -29,7 +29,7 @@ const App: React.FC<Props> = ({ provincias, sucursales }) => {
         <SelectLocalidades />
         <SucursalList />
       </div>
-      <div className='w-9/12'>
+      <div className='w-9/12 bg-[#e5e3de]'>
         <GoogleMaps />
       </div>
     </div>

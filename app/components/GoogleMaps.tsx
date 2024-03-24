@@ -15,6 +15,8 @@ const GoogleMaps = () => {
   })
 
   useEffect(() => {
+    if (sucursalesLocalidad.length === 0) return
+
     const initializeMap = async () => {
       const { Map } = await loader.importLibrary('maps')
       const { AdvancedMarkerElement } = (await google.maps.importLibrary(
@@ -40,7 +42,7 @@ const GoogleMaps = () => {
 
       const options: google.maps.MapOptions = {
         center: locationInMap,
-        zoom: 12,
+        zoom: 10,
         mapId: 'NEXT_MAPS_TUTS'
       }
 
