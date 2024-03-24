@@ -23,8 +23,8 @@ const App: React.FC<Props> = ({ provincias, sucursales }) => {
     setProvincias(provincias)
   }, [sucursales, provincias])
   return (
-    <div className='flex flex-row'>
-      <div className='w-3/12 bg-gray-100 p-4'>
+    <div className='flex flex-row h-screen max-h-screen'>
+      <div className='w-3/12 bg-gray-100 p-4 h-screen max-h-screen overflow-y-scroll'>
         <SelectProvincias provincias={provincias} />
         <SelectLocalidades />
         <SucursalList />

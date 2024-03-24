@@ -30,10 +30,10 @@ const GoogleMaps = () => {
       }
 
       // Pone en el centro en base a lo definido en la BD como centro de la localidad
-      if (sucursalesLocalidad.length > 0) {
-        centerOfMap.lat_x = sucursalesLocalidad[0].centroLocalidadGeo.lat_x
-        centerOfMap.long_y = sucursalesLocalidad[0].centroLocalidadGeo.long_y
-      }
+      // if (sucursalesLocalidad.length > 0) {
+      //   centerOfMap.lat_x = sucursalesLocalidad[0].centroLocalidadGeo.lat_x
+      //   centerOfMap.long_y = sucursalesLocalidad[0].centroLocalidadGeo.long_y
+      // }
 
       const locationInMap = {
         lat: centerOfMap.lat_x,

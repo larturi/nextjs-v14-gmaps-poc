@@ -25,10 +25,10 @@ const SucursalCard: React.FC<Props> = ({ sucursal }) => {
     >
       <div className='px-6 py-4'>
         <div className='font-bold text-md mb-'>
-          {`${sucursal.calle} ${sucursal.numero}`}
+          {`${sucursal.calle.toUpperCase()} ${sucursal.numero}`}
         </div>
         <p className='text-gray-700 text-base'>
-          {`${sucursal.localidad}, ${sucursal.provincia}`}
+          {`${sucursal.localidad.toUpperCase()}, ${sucursal.provincia.toUpperCase()}`}
         </p>
       </div>
       <div className='px-6 pt-1 pb-2'>
