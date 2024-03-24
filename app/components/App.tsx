@@ -8,6 +8,7 @@ import GoogleMaps from '../components/GoogleMaps'
 import SelectLocalidades from '../components/SelectLocalidades'
 import SelectProvincias from '../components/SelectProvincias'
 import { Sucursal } from '@/app/types/Sucursal'
+import SucursalList from './SucursalList'
 
 interface Props {
   provincias: string[]
@@ -26,6 +27,7 @@ const App: React.FC<Props> = ({ provincias, sucursales }) => {
       <div className='w-3/12 bg-gray-100 p-4'>
         <SelectProvincias provincias={provincias} />
         <SelectLocalidades />
+        <SucursalList />
       </div>
       <div className='w-9/12'>
         <GoogleMaps />

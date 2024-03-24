@@ -9,7 +9,8 @@ interface Props {
 const SelectProvincias: React.FC<Props> = ({ provincias }) => {
   const API_URL = process.env.NEXT_PUBLIC_API_URL
 
-  const { setLocalidades, setProvinciaSeleccionada } = useStore()
+  const { setLocalidades, setProvinciaSeleccionada, setSucursalesLocalidad } =
+    useStore()
 
   const handleProvinciaChange = async (e: any) => {
     const provincia = e.target.value
@@ -21,6 +22,7 @@ const SelectProvincias: React.FC<Props> = ({ provincias }) => {
     const localidades = await res.json()
 
     setLocalidades(localidades)
+    setSucursalesLocalidad([])
   }
 
   return (

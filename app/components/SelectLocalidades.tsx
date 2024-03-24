@@ -6,24 +6,31 @@ const SelectLocalidades = () => {
   const {
     localidades,
     sucursales,
-    setSucursales,
+    localidadesUpdateCounter,
     setLocalidadSeleccionada,
-    localidadesUpdateCounter
+    setSucursalesLocalidad,
+    sucursalesLocalidad
   } = useStore()
 
   const handleLocalidadChange = async (e: any) => {
     const localidad = e.target.value
     setLocalidadSeleccionada(localidad)
 
+    const sucursalesFiltered = sucursales.filter(
+      (sucursal) => sucursal.localidad === localidad
+    )
+
+    setSucursalesLocalidad(sucursalesFiltered)
+
     const sucursalesUpdated = sucursales.filter(
       (sucursal) => sucursal.localidad.toUpperCase() === localidad.toUpperCase()
     )
 
-    setSucursales(sucursalesUpdated)
+    setSucursalesLocalidad(localidad)
   }
 
   return (
-    <div className='relative inline-block w-full'>
+    <div className='relative inline-block w-full mb-4'>
       <select
         key={localidadesUpdateCounter}
         onChange={handleLocalidadChange}

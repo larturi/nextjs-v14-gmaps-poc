@@ -6,4 +6,5 @@ export type Sucursal = {
   numero: string
   lat_x: number
   long_y: number
+  stock: number
 }

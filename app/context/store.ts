@@ -22,6 +22,10 @@ interface Store {
   localidadSeleccionada: string
   setLocalidadSeleccionada: (localidad: string) => void
   localidadesUpdateCounter: number
+
+  // Sucursales de la Localidad Seleccionada
+  sucursalesLocalidad: Sucursal[]
+  setSucursalesLocalidad: (sucursalesLocalidad: Sucursal[]) => void
 }
 
 const useStore = create<Store>((set) => ({
@@ -50,7 +54,18 @@ const useStore = create<Store>((set) => ({
   localidadSeleccionada: '',
   setLocalidadSeleccionada: (localidad) =>
     set({ localidadSeleccionada: localidad }),
-  localidadesUpdateCounter: 0
+  localidadesUpdateCounter: 0,
+
+  // Sucursales de la Localidad Seleccionada
+  sucursalesLocalidad: [],
+  setSucursalesLocalidad: (localidad) =>
+    set((state) => ({
+      sucursalesLocalidad: state.sucursales.filter(
+        (sucursal) =>
+          sucursal.localidad.toLowerCase() ===
+          localidad.toString().toLowerCase()
+      )
+    }))
 }))
 
 export default useStore
