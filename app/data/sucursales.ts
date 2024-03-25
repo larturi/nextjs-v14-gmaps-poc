@@ -188,7 +188,7 @@ export const sucursales: Sucursal[] = [
     region: 'AMBA',
     subregion: 'AMBA',
     provincia: 'BUENOS AIRES',
-    localidad: 'PIÃ‘EYRO',
+    localidad: 'PIÑEYRO',
     lat_x: -34.70257033,
     long_y: -58.37256208,
     calle: 'Rivadavia',
@@ -984,7 +984,7 @@ export const sucursales: Sucursal[] = [
     localidad: 'LA FRANCIA',
     lat_x: -31.4058115,
     long_y: -62.628913,
-    calle: 'SAN MARTiN',
+    calle: 'SAN MARTIN',
     numero: '200',
     razon_social: 'MEDITEL',
     stock: 6
@@ -1465,7 +1465,7 @@ export const sucursales: Sucursal[] = [
     localidad: 'CORDOBA',
     lat_x: -31.41448039,
     long_y: -64.188186,
-    calle: 'TUCUMiN',
+    calle: 'TUCUMAN',
     numero: '25',
     razon_social: 'LOGHINET',
     stock: 31
@@ -1634,7 +1634,7 @@ export const sucursales: Sucursal[] = [
     localidad: 'CORDOBA',
     lat_x: -31.4144697,
     long_y: -64.1516228,
-    calle: 'PANAMi',
+    calle: 'PANAMA',
     numero: '2356',
     razon_social: 'LOGHINET',
     stock: 9
@@ -1946,7 +1946,7 @@ export const sucursales: Sucursal[] = [
     localidad: 'BERROTARAN',
     lat_x: -32.4530481,
     long_y: -64.3860248,
-    calle: 'ING. RiOS',
+    calle: 'ING. RIOS',
     numero: '53',
     razon_social: 'MEDITEL',
     stock: 11
@@ -2076,7 +2076,7 @@ export const sucursales: Sucursal[] = [
     localidad: 'CRUZ DEL EJE',
     lat_x: -30.7253352,
     long_y: -64.8024156,
-    calle: 'SAN MARTiN',
+    calle: 'SAN MARTIN',
     numero: '10',
     razon_social: 'MEDITEL',
     stock: 16
@@ -2128,7 +2128,7 @@ export const sucursales: Sucursal[] = [
     localidad: 'VILLA DOLORES',
     lat_x: -31.9486183,
     long_y: -65.1884321,
-    calle: 'AVENIDA SAN MARTiN',
+    calle: 'AVENIDA SAN MARTIN',
     numero: '221',
     razon_social: 'MEDITEL',
     stock: 14
@@ -2167,7 +2167,7 @@ export const sucursales: Sucursal[] = [
     localidad: 'COLONIA CAROYA',
     lat_x: -31.018828,
     long_y: -64.064643,
-    calle: 'AVENIDA SAN MARTiN',
+    calle: 'AVENIDA SAN MARTIN',
     numero: '3504',
     razon_social: 'MEDITEL',
     stock: 29
@@ -2401,7 +2401,7 @@ export const sucursales: Sucursal[] = [
     localidad: 'LAS HERAS',
     lat_x: -32.8244842,
     long_y: -68.831503,
-    calle: 'AVENIDA GENERAL SAN MARTiN',
+    calle: 'AVENIDA GENERAL SAN MARTIN',
     numero: '4002',
     razon_social: 'LOGHINET',
     stock: 18
@@ -2505,7 +2505,7 @@ export const sucursales: Sucursal[] = [
     localidad: 'LUJAN DE CUYO',
     lat_x: -33.0341013,
     long_y: -68.8783276,
-    calle: 'SAN MARTiN',
+    calle: 'SAN MARTIN',
     numero: '732',
     razon_social: 'LOGHINET',
     stock: 25

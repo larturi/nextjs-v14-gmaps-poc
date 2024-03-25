@@ -41,3 +41,14 @@ export function getDistanceFromCurrentLocation(
   const distancia = R * c // Distancia en km
   return distancia
 }
+
+export function distanceForHumans(distanciaEnKilometros: number): string {
+  // Convertir a metros para distancias menores a 1 km
+  if (distanciaEnKilometros < 1) {
+    const distanciaEnMetros = Math.round(distanciaEnKilometros * 1000)
+    return `${distanciaEnMetros} m`
+  } else {
+    // Redondear a dos decimales para distancias de 1 km o más
+    return `${distanciaEnKilometros.toFixed(2)} km`
+  }
+}

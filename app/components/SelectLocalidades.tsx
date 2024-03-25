@@ -13,7 +13,8 @@ const SelectLocalidades = () => {
     sucursales,
     localidadesUpdateCounter,
     setLocalidadSeleccionada,
-    setSucursalesLocalidad
+    setSucursalesLocalidad,
+    setUserCurrentLocation
   } = useStore()
 
   const handleLocalidadChange = async (e: any) => {
@@ -36,6 +37,8 @@ const SelectLocalidades = () => {
           sucursal.long_y
         )
       }))
+
+      setUserCurrentLocation(userCurrentLocation)
 
       sucursalesFiltered.sort((a: Sucursal, b: Sucursal) => {
         const distanceA = a.distance === undefined ? Infinity : a.distance

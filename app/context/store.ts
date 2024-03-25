@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { Sucursal } from '../types/Sucursal'
+import { Sucursal, Ubicacion } from '../types/Sucursal'
 
 interface Store {
   // Sucursales
@@ -30,6 +30,10 @@ interface Store {
   // Sucursal seleccionada
   sucursalSeleccionada?: Sucursal
   setSucursalSeleccionada: (id: string) => void
+
+  // User Current Location
+  userCurrentLocation?: Ubicacion
+  setUserCurrentLocation: (location: Ubicacion) => void
 }
 
 const useStore = create<Store>((set) => ({
@@ -71,7 +75,11 @@ const useStore = create<Store>((set) => ({
         (sucursal) => sucursal.id.toString() === id
       )
       return { sucursalSeleccionada: foundSucursal || undefined }
-    })
+    }),
+
+  // User Current Location
+  userCurrentLocation: undefined,
+  setUserCurrentLocation: (userCurrentLocation) => set({ userCurrentLocation })
 }))
 
 export default useStore
