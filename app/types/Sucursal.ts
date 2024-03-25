@@ -10,4 +10,10 @@ export type Sucursal = {
   lat_x: number
   long_y: number
   stock: number
+  distance?: number
+}
+
+export interface Ubicacion {
+  lat: number
+  lng: number
 }

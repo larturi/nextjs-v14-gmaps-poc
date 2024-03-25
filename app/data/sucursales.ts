@@ -145,6 +145,19 @@ export const sucursales: Sucursal[] = [
     stock: 11
   },
   {
+    id: 'CAB011999',
+    region: 'AMBA',
+    subregion: 'AMBA',
+    provincia: 'CIUDAD AUTONOMA DE BUENOS AIRES',
+    localidad: 'CIUDAD AUTONOMA BUENOS AIRES',
+    lat_x: -34.63226878902953,
+    long_y: -58.46183640336713,
+    calle: 'Jose Bonifacio',
+    numero: '2433',
+    razon_social: 'KIOSCO EL LOCO',
+    stock: 11
+  },
+  {
     id: 'BUE008398',
     region: 'AMBA',
     subregion: 'AMBA',

@@ -1,6 +1,11 @@
 'use client'
 
 import useStore from '@/app/context/store'
+import {
+  getCurrentUserLocation,
+  getDistanceFromCurrentLocation
+} from '../helper/localization'
+import { Sucursal } from '../types/Sucursal'
 
 const SelectLocalidades = () => {
   const {
@@ -8,25 +13,42 @@ const SelectLocalidades = () => {
     sucursales,
     localidadesUpdateCounter,
     setLocalidadSeleccionada,
-    setSucursalesLocalidad,
-    sucursalesLocalidad
+    setSucursalesLocalidad
   } = useStore()
 
   const handleLocalidadChange = async (e: any) => {
     const localidad = e.target.value
     setLocalidadSeleccionada(localidad)
 
-    const sucursalesFiltered = sucursales.filter(
-      (sucursal) => sucursal.localidad === localidad
-    )
-
-    setSucursalesLocalidad(sucursalesFiltered)
-
-    const sucursalesUpdated = sucursales.filter(
+    let sucursalesFiltered = sucursales.filter(
       (sucursal) => sucursal.localidad.toUpperCase() === localidad.toUpperCase()
     )
 
-    setSucursalesLocalidad(localidad)
+    // Ordena las sucursales filtradas en base a la ubicacion actual
+    try {
+      const userCurrentLocation = await getCurrentUserLocation()
+      sucursalesFiltered = sucursalesFiltered.map((sucursal: Sucursal) => ({
+        ...sucursal,
+        distance: getDistanceFromCurrentLocation(
+          userCurrentLocation.lat,
+          userCurrentLocation.lng,
+          sucursal.lat_x,
+          sucursal.long_y
+        )
+      }))
+
+      sucursalesFiltered.sort((a: Sucursal, b: Sucursal) => {
+        const distanceA = a.distance === undefined ? Infinity : a.distance
+        const distanceB = b.distance === undefined ? Infinity : b.distance
+
+        return distanceA - distanceB
+      })
+    } catch (error) {
+      console.error(error)
+      setSucursalesLocalidad(sucursalesFiltered)
+    }
+
+    setSucursalesLocalidad(sucursalesFiltered)
   }
 
   return (

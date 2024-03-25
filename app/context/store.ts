@@ -62,14 +62,7 @@ const useStore = create<Store>((set) => ({
 
   // Sucursales de la Localidad seleccionada
   sucursalesLocalidad: [],
-  setSucursalesLocalidad: (localidad) =>
-    set((state) => ({
-      sucursalesLocalidad: state.sucursales.filter(
-        (sucursal) =>
-          sucursal.localidad.toLowerCase() ===
-          localidad.toString().toLowerCase()
-      )
-    })),
+  setSucursalesLocalidad: (sucursalesLocalidad) => set({ sucursalesLocalidad }),
 
   sucursalSeleccionada: undefined,
   setSucursalSeleccionada: (id) =>
