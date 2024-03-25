@@ -13,7 +13,7 @@ export type Sucursal = {
   distance?: number
 }
 
-export interface Ubicacion {
+export interface Location {
   lat: number
   lng: number
 }

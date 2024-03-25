@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 'use client'
 
 import React, { useEffect } from 'react'
@@ -6,7 +8,7 @@ import useStore from '@/app/context/store'
 
 const GoogleMaps = () => {
   const mapRef = React.useRef<HTMLDivElement>(null)
-  const { sucursalesLocalidad } = useStore()
+  const { sucursalesLocalidad, userCurrentLocation } = useStore()
 
   const loader = new Loader({
     apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY as string,
@@ -29,6 +31,11 @@ const GoogleMaps = () => {
         long_y: -58.451987
       }
 
+      if (userCurrentLocation) {
+        centerOfMap.lat_x = userCurrentLocation.lat
+        centerOfMap.long_y = userCurrentLocation.lng
+      }
+
       // Pone en el centro en base a lo definido en la BD como centro de la localidad
       // if (sucursalesLocalidad.length > 0) {
       //   centerOfMap.lat_x = sucursalesLocalidad[0].centroLocalidadGeo.lat_x
@@ -42,7 +49,7 @@ const GoogleMaps = () => {
 
       const options: google.maps.MapOptions = {
         center: locationInMap,
-        zoom: 10,
+        zoom: 14,
         mapId: 'NEXT_MAPS_TUTS'
       }
 

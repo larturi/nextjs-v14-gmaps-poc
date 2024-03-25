@@ -1,13 +1,13 @@
-import { Ubicacion } from '../types/Sucursal'
+import { Location } from '../types/Sucursal'
 
-export function getCurrentUserLocation(): Promise<Ubicacion> {
+export function getCurrentUserLocation(): Promise<Location> {
   return new Promise((resolve, reject) => {
     if (!navigator.geolocation) {
       reject(new Error('Geolocalización no soportada por este navegador.'))
     } else {
       navigator.geolocation.getCurrentPosition(
         (position: GeolocationPosition) => {
-          const userCurrentLocation: Ubicacion = {
+          const userCurrentLocation: Location = {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           }

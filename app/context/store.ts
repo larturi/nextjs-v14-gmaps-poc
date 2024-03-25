@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { Sucursal, Ubicacion } from '../types/Sucursal'
+import { Sucursal, Location } from '../types/Sucursal'
 
 interface Store {
   // Sucursales
@@ -32,8 +32,8 @@ interface Store {
   setSucursalSeleccionada: (id: string) => void
 
   // User Current Location
-  userCurrentLocation?: Ubicacion
-  setUserCurrentLocation: (location: Ubicacion) => void
+  userCurrentLocation?: Location
+  setUserCurrentLocation: (location: Location) => void
 }
 
 const useStore = create<Store>((set) => ({
