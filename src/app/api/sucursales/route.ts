@@ -1,4 +1,4 @@
-import { sucursales } from '../../data/sucursales'
+import { sucursales } from '@/data/sucursales'
 
 export async function GET(req: Request) {
   try {

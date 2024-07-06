@@ -1,8 +1,8 @@
 'use client'
 
-import useStore from '@/app/context/store'
-import { distanceForHumans } from '@/app/helper/localization'
-import { Sucursal } from '@/app/types/Sucursal'
+import { distanceForHumans } from '@/helper/localization'
+import { Sucursal } from '@/types/Sucursal'
+import useStore from '@/context/store'
 
 interface Props {
   sucursal: Sucursal

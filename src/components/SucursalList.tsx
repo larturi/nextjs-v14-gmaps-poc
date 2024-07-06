@@ -1,6 +1,6 @@
 'use client'
 
-import useStore from '@/app/context/store'
+import useStore from '@/context/store'
 import SucursalCard from './SucursalCard'
 
 const SucursalList = () => {

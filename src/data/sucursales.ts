@@ -1,4 +1,4 @@
-import { Sucursal } from '../types/Sucursal'
+import { Sucursal } from '@/types/Sucursal'
 
 export const sucursales: Sucursal[] = [
   {

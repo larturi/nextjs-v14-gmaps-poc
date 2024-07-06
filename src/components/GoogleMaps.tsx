@@ -4,7 +4,7 @@
 
 import React, { useEffect } from 'react'
 import { Loader } from '@googlemaps/js-api-loader'
-import useStore from '@/app/context/store'
+import useStore from '@/context/store'
 
 const GoogleMaps = () => {
   const mapRef = React.useRef<HTMLDivElement>(null)

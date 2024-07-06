@@ -1,4 +1,4 @@
-import { sucursales } from '../../data/sucursales'
+import { sucursales } from '@/data/sucursales'
 
 export async function GET(req: Request) {
   try {
@@ -7,18 +7,12 @@ export async function GET(req: Request) {
     const provinciaQuery = url.searchParams.get('provincia')
 
     if (!provinciaQuery) {
-      return new Response(
-        JSON.stringify({ error: 'Provincia no especificada' }),
-        { status: 400 }
-      )
+      return new Response(JSON.stringify({ error: 'Provincia no especificada' }), { status: 400 })
     }
 
     const localidades = new Set(
       sucursales
-        .filter(
-          (sucursal) =>
-            sucursal.provincia.toLowerCase() === provinciaQuery.toLowerCase()
-        )
+        .filter((sucursal) => sucursal.provincia.toLowerCase() === provinciaQuery.toLowerCase())
         .map((sucursal) => sucursal.localidad)
     )
 

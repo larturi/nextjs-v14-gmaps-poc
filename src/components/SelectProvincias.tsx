@@ -1,6 +1,6 @@
 'use client'
 
-import useStore from '@/app/context/store'
+import useStore from '@/context/store'
 
 interface Props {
   provincias: string[]
@@ -9,8 +9,7 @@ interface Props {
 const SelectProvincias: React.FC<Props> = ({ provincias }) => {
   const API_URL = process.env.NEXT_PUBLIC_API_URL
 
-  const { setLocalidades, setProvinciaSeleccionada, setSucursalesLocalidad } =
-    useStore()
+  const { setLocalidades, setProvinciaSeleccionada, setSucursalesLocalidad } = useStore()
 
   const handleProvinciaChange = async (e: any) => {
     const provincia = e.target.value

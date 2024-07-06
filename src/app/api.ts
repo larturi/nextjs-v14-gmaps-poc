@@ -1,4 +1,4 @@
-import { Sucursal } from './types/Sucursal'
+import { Sucursal } from '../types/Sucursal'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 
@@ -26,12 +26,9 @@ const api = {
   },
   localidades: {
     list: async (provinciaName: string): Promise<string[]> => {
-      const res = await fetch(
-        `${API_URL}/localidades?provincia=${provinciaName}`,
-        {
-          next: { revalidate: 30 }
-        }
-      )
+      const res = await fetch(`${API_URL}/localidades?provincia=${provinciaName}`, {
+        next: { revalidate: 30 }
+      })
       const localidades = await res.json()
       return localidades
     }

@@ -3,12 +3,12 @@
 'use client'
 
 import { useEffect } from 'react'
-import useStore from '@/app/context/store'
+import useStore from '@/context/store'
 import GoogleMaps from '../components/GoogleMaps'
 import SelectLocalidades from '../components/SelectLocalidades'
 import SelectProvincias from '../components/SelectProvincias'
-import { Sucursal } from '@/app/types/Sucursal'
 import SucursalList from './SucursalList'
+import { Sucursal } from '@/types/Sucursal'
 
 interface Props {
   provincias: string[]
