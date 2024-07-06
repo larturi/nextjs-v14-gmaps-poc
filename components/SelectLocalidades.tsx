@@ -1,11 +1,8 @@
 'use client'
 
 import useStore from '@/app/context/store'
-import {
-  getCurrentUserLocation,
-  getDistanceFromCurrentLocation
-} from '../helper/localization'
-import { Sucursal } from '../types/Sucursal'
+import { getCurrentUserLocation, getDistanceFromCurrentLocation } from '@/app/helper/localization'
+import { Sucursal } from '@/app/types/Sucursal'
 
 const SelectLocalidades = () => {
   const {

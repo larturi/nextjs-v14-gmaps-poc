@@ -1,5 +1,5 @@
 import api from './api'
-import App from './components/App'
+import App from '@/components/App'
 import { Sucursal } from './types/Sucursal'
 
 export default async function Home() {

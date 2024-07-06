@@ -1,8 +1,8 @@
 'use client'
 
 import useStore from '@/app/context/store'
-import { Sucursal } from '../types/Sucursal'
-import { distanceForHumans } from '../helper/localization'
+import { distanceForHumans } from '@/app/helper/localization'
+import { Sucursal } from '@/app/types/Sucursal'
 
 interface Props {
   sucursal: Sucursal
@@ -26,9 +26,7 @@ const SucursalCard: React.FC<Props> = ({ sucursal }) => {
     >
       <div className='px-4 py-4'>
         <div className='flex'>
-          <div className='font-bold text-md mb-3 w-3/4'>
-            {sucursal.razon_social.toUpperCase()}
-          </div>
+          <div className='font-bold text-md mb-3 w-3/4'>{sucursal.razon_social.toUpperCase()}</div>
           {userCurrentLocation && (
             <div className='w-1/4 text-right text-sm text-gray-600'>
               {distanceForHumans(sucursal.distance!)}
