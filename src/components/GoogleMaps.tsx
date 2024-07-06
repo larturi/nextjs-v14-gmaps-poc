@@ -61,7 +61,7 @@ const GoogleMaps = () => {
           lng: sucursal.long_y
         }
 
-        const titleMarker = `${sucursal.calle} ${sucursal.numero}`
+        const titleMarker = `${sucursal.razon_social} | ${sucursal.calle} ${sucursal.numero}`
 
         const marker = new google.maps.marker.AdvancedMarkerElement({
           map: map,
